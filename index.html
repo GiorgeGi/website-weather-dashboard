@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the page displayed in the browser tab -->
+    <title>Weather Dashboard</title>
+    
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Leaflet.js CSS for the map integration (if used later for maps) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+    <!-- Main page container with center alignment using Flexbox -->
+    <div class="page center">
+        <!-- Heading for the page -->
+        <h1 class="centered-title">
+            An Empty Canvas,<br>
+            Where Great Things Begin <br>
+            <!-- Fun placeholder image -->
+            <img src="https://media1.tenor.com/m/hTEZeqwOPWgAAAAd/crumb-cat.gif" alt="A fun placeholder gif" class="header-gif">
+        </h1>
+    </div>
+
+    <!-- Main content section, used for displaying weather info -->
+    <div class="column-container">
+        <div class="container">
+            <!-- Title of the weather dashboard -->
+            <h1>Weather Dashboard</h1>
+
+            <!-- Search box for entering city names -->
+            <div class="search-box">
+                <!-- Text input field for city name -->
+                <input type="text" id="city-input" placeholder="Enter city name...">
+                <!-- Button to trigger the search -->
+                <button id="search-btn">Search</button>
+            </div>
+
+            <!-- Section for displaying recent search history -->
+            <div class="recent-searches">
+                <h2>Recently Searched</h2>
+                <!-- List of recently searched cities will be dynamically populated here -->
+                <div id="recent-list"></div> <!-- Scrollable list of recent searches -->
+
+                <!-- Button to clear recent search history -->
+                <button id="clear-list-btn">Clear Recently Searched</button>
+            </div>
+
+<!-- New Feedback Button -->
+            <button id="feedback-btn" class="feedback-btn">Give Feedback</button>
+
+            <!-- Feedback Form Modal -->
+            <div id="feedback-modal" class="modal">
+                <div class="modal-content">
+                    <!-- Close Button -->
+                    <span class="modal-close-btn">&times;</span>
+                    
+                    <!-- Feedback Form -->
+                               <form action="submit_feedback.php" method="post">
+								   <h1 style="text-align: center">Your submissions matter!</h1>
+              <div class="form-group">
+                <label for="nickname">What is your nickname?</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nickname"
+                  name="nickname"
+                /><br>
+              </div>
+              <div class="form-group">
+                <label for="ease_of_use">Was the applications easy to use?</label><br>
+                <div>
+                  <label for="yes" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="ease_of_use"
+                      value="y"
+                      id="yes"
+                    />Yes</label
+                  >
+                  <label for="kinda" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="ease_of_use"
+                      value="k"
+                      id="kinda"
+                    />Kinda</label
+                  >
+                  <label for="no" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="ease_of_use"
+                      value="n"
+                      id="no"
+                    />No</label
+                  >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="usefulness">Was the application useful to you?</label><br>
+                <div>
+                  <label for="very" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="usefulness"
+                      value="v"
+                      id="very"
+                    />Very Much</label
+                  >
+                  <label for="somewhat" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="usefulness"
+                      value="s"
+                      id="somewhat"
+                    />Somewhat</label
+                  >
+                  <label for="barely" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="usefulness"
+                      value="b"
+                      id="barely"
+                    />Barely</label
+                  >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cat_annoying">Was crumb cat annoying?</label><br>
+                <div>
+                  <label for="hate" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="cat_annoying"
+                      value="h"
+                      id="hate"
+                    />Yes</label
+                  >
+                  <label for="ignore" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="cat_annoying"
+                      value="i"
+                      id="ignore"
+                    />No</label
+                  >
+                  <label for="love" class="radio-inline"
+                    ><input
+                      type="radio"
+                      name="cat_annoying"
+                      value="l"
+                      id="love"
+                    />I loved the cat!</label
+                  >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="extra_comments">Anything else?</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="extra_comments"
+                  name="extra_comments"
+                />
+              </div><br>
+              <input type="submit" class="submit-btn" />
+            </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- Footer with contact info and licensing details -->
+            <div class="contact-info">
+                <p>Georgios Varvarigos</p>
+                <!-- Email link for contacting the creator -->
+                <p>Email: <a href="mailto:giorgosvarvarigos03@gmail.com">giorgosvarvarigos@gmail.com</a></p>
+                <!-- Copyright information with a link to the license -->
+                <p>&copy; 2025 Weather Dashboard. This project is licensed<br> under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU General Public License v3.0</a>.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Leaflet.js library (for map functionality, if you plan to add a map) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Link to the external JavaScript file that handles the weather data and functionality -->
+    <script src="script.js"></script>
+</body>
+
+</html>

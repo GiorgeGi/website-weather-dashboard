@@ -1,0 +1,539 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif; /* Sets the font for the page */
+    background-color: #f0f8ff; /* Light background color */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    height: 100vh; /* Ensures the body takes up the full height of the viewport */
+    display: flex; /* Flexbox for layout */
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start; /* Align content to the top */
+}
+
+/* Title Styling for the Centered Text */
+.centered-title {
+    position: absolute;
+    top: 0%; /* Moves the element to the top of the screen */
+    left: 45%; /* Centers horizontally on the screen */
+    text-align: center; /* Centers the text horizontally */
+    font-size: 2.5em; /* Font size for the title */
+    color: #BFBFBF; /* Light gray text color */
+    font-family: Arial, sans-serif; /* Optional: Set the font */
+    margin-top: 20%; /* Moves the title slightly down */
+}
+
+/* GIF Image Styling for the Header */
+.header-gif {
+    width: 100px; /* Width of the gif */
+    height: 100px; /* Height of the gif */
+    border-radius: 50%; /* Makes the gif circular */
+    object-fit: cover; /* Ensures the gif fits inside the box without distortion */
+    border: 5px solid #BFBFBF; /* Adds a border around the gif */
+    margin-top: 10px; /* Adds space between the gif and the text */
+}
+
+/* Left Column Styling (Fixed Sidebar) */
+.column-container {
+    position: fixed; /* Fixes the sidebar to the left */
+    top: 0; /* Aligns it to the top of the viewport */
+    left: 0; /* Aligns it to the left of the viewport */
+    width: 300px; /* Sets a fixed width */
+    height: 100%; /* Full height of the viewport */
+    background-color: #fff; /* White background */
+    padding: 20px; /* Adds padding inside the sidebar */
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+    border-radius: 0 10px 10px 0; /* Rounded corners on the right side */
+    overflow-y: auto; /* Allows scrolling if the content overflows */
+}
+
+/* General Container Styling */
+.container {
+    text-align: center; /* Centers the text horizontally */
+}
+
+/* Title Styling */
+h1 {
+    color: #333; /* Dark text color */
+    margin-bottom: 10px; /* Adds spacing below the title */
+}
+
+/* Styling for the Search Box */
+.search-box {
+    display: flex; /* Flexbox for the input and button */
+    gap: 10px; /* Spacing between the input and button */
+    margin-top: 10px; /* Adds top margin */
+}
+
+input[type="text"] {
+    width: 65%; /* Makes the input field take up 65% of the space */
+    padding: 10px; /* Adds padding inside the input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+button {
+    width: 30%; /* Makes the button take up 30% of the space */
+    padding: 10px; /* Adds padding inside the button */
+    border: none; /* Removes default border */
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styling for Contact Info at the Bottom */
+.contact-info {
+    position: absolute;
+    bottom: 36px; /* Aligns it near the bottom of the sidebar */
+    left: 20px; /* Adds left margin */
+    text-align: left; /* Aligns the text to the left */
+    font-size: 13px; /* Smaller font size */
+    color: #555; /* Medium gray text color */
+    line-height: 1; /* Adds spacing between lines */
+    margin-top: 50px; /* Pushes the entire block of paragraphs down */
+}
+
+.contact-info a {
+    color: #007bff; /* Blue links */
+    text-decoration: none; /* Removes underline */
+}
+
+.contact-info p {
+    line-height: 1; /* Reduces line height for compact text */
+    margin-bottom: 5px; /* Reduces the space between each <p> element */
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Underlines links on hover */
+}
+
+/* Feedback Button Styling */
+.feedback-btn {
+    background-color: #28a745; /* Tomato red background */
+    color: white; /* White text */
+    padding: 10px; /* Padding inside the button */
+    border: none; /* Removes the border */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 20px; /* Adds space above */
+    width: 100%; /* Full width */
+    text-align: center; /* Centers the text */
+}
+
+.feedback-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* On top of other content */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    position: relative;
+}
+
+/* Close Button */
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Weather Box Styling */
+.weather-box {
+    position: absolute;
+    top: 100px; /* Distance from the top */
+    left: 100px; /* Distance from the left */
+    width: 250px; /* Fixed width */
+    background-color: #fff; /* White background */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth with shadow */
+    z-index: 100; /* Ensures it appears on top of other elements */
+}
+
+/* Weather Header Styling */
+.weather-header {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    padding: 10px; /* Adds padding inside the header */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    cursor: move; /* Makes the header draggable */
+    display: flex; /* Flexbox layout for the header */
+    align-items: center; /* Aligns items vertically in the center */
+}
+
+/* Weather Header Additions for Buttons */
+.weather-header span {
+    flex-grow: 1; /* Expands to fill available space */
+    text-align: left; /* Aligns text to the left */
+}
+
+/* Button Group Styling in Weather Header */
+.weather-header .btn-group {
+    display: flex;
+    gap: 5px; /* Spacing between buttons */
+    /* margin-left: auto; */
+}
+
+.weather-header .btn-group button {
+    background-color: transparent; /* No background for buttons */
+    border: none; /* Removes the border */
+    color: #fff; /* White text */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.weather-header .btn-group button:hover {
+    color: #ffdddd; /* Light pink color on hover */
+}
+
+/* Adjust Button Alignment */
+.weather-header .btn-group {
+    margin-left: auto;
+}
+
+/* Weather Content Styling */
+.weather-content {
+    padding: 15px; /* Adds padding inside the weather content box */
+    line-height: 1; /* Adjusts line height for better readability */
+}
+
+/* Recently Searched Section */
+.recent-searches {
+    margin-top: 20px; /* Adds space above */
+    color: #333; /* Dark text color */
+}
+
+.recent-searches h2 {
+    color: #333; /* Dark text color */
+    font-size: 18px; /* Adjusts font size */
+}
+
+#recent-list {
+    max-height: 200px; /* Maximum height for the recent searches list */
+    overflow-y: auto; /* Enables scrolling if the list overflows */
+    padding: 10px; /* Padding inside the list */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light gray background */
+}
+
+/* Styling for Recent Search Buttons */
+.recent-searches button {
+    display: block; /* Makes buttons block-level */
+    width: 100%; /* Full width */
+    padding: 5px; /* Padding inside the button */
+    margin: 5px 0; /* Vertical margin between buttons */
+    background-color: #f1f1f1; /* Light background color */
+    color: #333; /* Dark text */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: left; /* Aligns text to the left */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.recent-searches button:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: #fff; /* White text */
+}
+
+/* Clear List Button Styling */
+#clear-list-btn {
+    background-color: #ff6347; /* Tomato red background */
+    color: white; /* White text */
+    padding: 10px; /* Padding inside the button */
+    border: none; /* Removes the border */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 20px; /* Adds space above */
+    width: 100%; /* Full width */
+    text-align: center; /* Centers the text */
+}
+
+#clear-list-btn:hover {
+    background-color: #d9534f; /* Darker red on hover */
+}
+
+/* Advanced Button Styling */
+.advanced-btn {
+    width: 45%; /* Button takes up 45% of the width */
+    font-size: 0.9em; /* Smaller font size */
+    padding: 10px; /* Padding inside the button */
+    border: none; /* Removes the border */
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: block; /* Makes the button block-level */
+    margin: 10px auto; /* Centers the button horizontally */
+    text-align: center; /* Ensures text is centered */
+}
+
+.advanced-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Full-Screen Modal Styling for Advanced Settings */
+.advanced-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column;
+    justify-content: start; /* Aligns content to the top */
+    align-items: stretch; /* Stretches content across */
+    padding: 20px; /* Padding inside the overlay */
+    box-sizing: border-box; /* Includes padding in the element's size */
+    z-index: 1000; /* Ensures it appears above other elements */
+    overflow: hidden; /* Hides overflow */
+}
+
+/* Advanced Header Styling */
+.advanced-header {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    padding: 10px; /* Padding inside the header */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Aligns items vertically */
+}
+
+/* Advanced Header Additions for Button */
+.advanced-header span {
+    flex-grow: 1; /* Expands to fill available space */
+    text-align: left; /* Aligns text to the left */
+    font-size: 16px; /* Sets font size to 16px */
+    font-weight: bold; /* Makes text bold */
+}
+
+/* Close Button in the Advanced Header */
+.advanced-header .close-advanced-btn {
+    background-color: transparent; /* No background */
+    border: none; /* No border */
+    color: #fff; /* White text */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 5px 15px; /* Padding inside the button */
+    width: auto; /* Width fits the content */
+    height: auto; /* Height fits the content */
+    margin: 0; /* No extra margin */
+}
+
+.advanced-header .close-advanced-btn:hover {
+    color: #ffdddd; /* Light pink color on hover */
+}
+
+/* Map Container Styling (if used for weather maps) */
+#map-container {
+    border: 2px solid #fff; /* White border around the map */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Styling for the weather details box next to the map */
+.weather-details-box {
+    width: 45%; /* Adjust the width as necessary */
+    margin-top: 20px; /* Adds space between the map and the details box */
+    margin-left: 10px; /* Adds space between the map and the details box */
+    padding: 15px; /* Padding inside the box */
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    display: inline-block; /* Makes it inline with the map */
+    vertical-align: top; /* Aligns it to the top */
+}
+
+/* Styling for the weather details header */
+.details-header {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    padding: 10px; /* Padding inside the header */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Centers the text */
+    margin-bottom: 10px; /* Adds space below the header */
+}
+
+/* Styling for the content inside the weather details box */
+.details-content {
+    padding: 10px; /* Padding inside the content area */
+    font-size: 20px; /* Larger text for readability */
+    color: #333; /* Dark text color */
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Spaces out the content */
+}
+
+/* Styling for the individual paragraphs inside weather content */
+.details-content p {
+    margin: 5px 0; /* Adds vertical spacing between paragraphs */
+}
+
+/* Weather info column styling */
+.weather-info-column,
+.lunar-data-column {
+    width: 45%; /* Adjust width for side-by-side layout */
+}
+
+/* Styling for individual paragraphs inside the weather info columns */
+.weather-info-column p,
+.lunar-data-column p {
+    margin: 5px 0; /* Adds spacing between the paragraphs */
+}
+
+/* Comment Section */
+.comments-box {
+    margin-top: 20px; /* Adds space from the previous content */
+    background: linear-gradient(to bottom, #f7e78d, #fcefb0); /* Gradient background from yellow */
+    border: 2px solid black; /* Border around the comment box */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the comment box */
+    overflow-y: auto; /* Enables vertical scrolling if necessary */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stacks content vertically */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5); /* Adds shadow for depth */
+}
+
+/* Header for the comments section */
+.comments-header {
+    font-weight: bold; /* Bold text for header */
+    background-color: #f2cc00; /* Darker yellow background */
+    padding: 5px; /* Padding inside the header */
+    text-align: center; /* Centers the text */
+    border-bottom: 1px solid black; /* Adds a border below the header */
+    font-size: 1.2em; /* Larger font size */
+}
+
+/* Content inside the comments box */
+.comments-content {
+    padding: 10px; /* Padding inside the content area */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    line-height: 1.5; /* Increases line height for better readability */
+    color: black; /* Black text */
+    white-space: pre-wrap; /* Keeps the line breaks in the text */
+    outline: none; /* Removes the outline from the content box */
+}
+
+/* Forecast Box Styling */
+.forecast-square {
+    display: inline-block; /* Makes the forecast box inline */
+    width: 240px; /* Sets the width of the box */
+    height: 240px; /* Sets the height of the box */
+    margin: 25px; /* Adds margin around the box */
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    text-align: center; /* Centers the text inside */
+    line-height: 45px; /* Centers the text vertically */
+    border-radius: 8px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+}
+
+/* Forecast Box with Padding and Margin Styling */
+.forecast-square {
+    background-color: #007BFF; /* Blue background */
+    padding: 10px; /* Adds padding inside the box */
+    margin: 15px; /* Adds margin around the box */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Centers the text inside the box */
+    font-size: 14px; /* Smaller font size */
+}
+
+/* Individual paragraph styling inside forecast box */
+.forecast-square p {
+    margin: 5px 0; /* Adds margin between paragraphs */
+}
+
+/* Forecast Date Styling */
+.forecast-date {
+    font-weight: bold; /* Makes the date bold */
+    font-size: 18px; /* Larger font size */
+}
+
+/* Styling for temperature, humidity, and condition sections */
+.forecast-temp,
+.forecast-humidity,
+.forecast-condition {
+    padding-top: 13px; /* Adds space from the top */
+    transform: translateY(20px); /* Moves the text slightly down */
+    line-height: 1.2; /* Adjusts line height for closer spacing */
+}
+
+/* Specific styling for forecast temperature */
+.forecast-temp {
+    font-size: 14px; /* Smaller font size for temperature */
+}
+
+/* Specific styling for forecast humidity */
+.forecast-humidity {
+    font-size: 14px; /* Smaller font size for humidity */
+}
+
+/* Specific styling for forecast condition */
+.forecast-condition {
+    font-size: 14px; /* Smaller font size for condition */
+}
